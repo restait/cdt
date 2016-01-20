@@ -1,7 +1,7 @@
 {
     "plugins": [
         "yahei",
-        "fontsettings",
+        "-fontsettings",
         "betterchinese",
         "unicodecss"
     ],
