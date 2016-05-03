@@ -6,7 +6,7 @@ from cdt import settings
 
 
 lookup = mako_views.TemplateRender(
-    settings.TEMPLATE_DIRS.get('cdtAction'),
+    settings.TEMPLATE_DIRS[0].get('cdtAction'),
     ['from cdt import views'],
 )
 

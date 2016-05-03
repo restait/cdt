@@ -121,10 +121,10 @@ USE_L10N = True
 USE_TZ = False
 
 # 模板所在地
-TEMPLATE_DIRS = {
+TEMPLATE_DIRS = [{
     'base': os.path.join(BASE_DIR, 'templates'),
     'cdtAction': os.path.join(BASE_DIR, 'cdtAction/templates'),
-}
+}]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
