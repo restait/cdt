@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'cdtAction',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -74,10 +76,13 @@ WSGI_APPLICATION = 'cdt.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+DATABASES_PATH = BASE_DIR + '/cdt/mysql.cnf'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': DATABASES_PATH,
+        },
     }
 }
 
@@ -106,14 +111,20 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# 如果国际化，应当打开USE_TZ并仔细调试
+USE_TZ = False
 
+# 模板所在地
+TEMPLATE_DIRS = {
+    'base': os.path.join(BASE_DIR, 'templates'),
+    'cdtAction': os.path.join(BASE_DIR, 'cdtAction/templates'),
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/

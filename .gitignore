@@ -10,3 +10,4 @@ rel/example_project
 .rebar
 __pycache__
 __pycache__/*
+mysql.cnf
